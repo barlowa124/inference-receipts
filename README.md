@@ -3,7 +3,7 @@
 Hash-bound, replayable receipts for LLM calls. `llmreceipt` runs a
 generation, records the exact weights hash, the input text, the generation
 settings, the output text, and the hash of the previous receipt in the
-log. Verification is recomputation: re-hash the record, re-walk the
+log. Verification is recomputation. Re-hash the record, re-walk the
 chain, and optionally re-run the generation to compare output hashes.
 
 The committed example (`examples/receipts/smollm2_chain.jsonl`) is two real
@@ -14,7 +14,7 @@ output hash before any replay runs.
 
 ## What a receipt proves, and what it does not
 
-A verified replay establishes a narrow, checkable claim: **on the recorded
+A verified replay establishes a narrow, checkable claim. **On the recorded
 backend configuration, this exact input to these exact weights produced
 this exact output.** That is a provenance statement about one computation,
 not a statement about whether the model is right on
@@ -24,8 +24,8 @@ other inputs.
 - It does **not** generalize across backends. A mismatch replayed under
   different torch/transformers versions or different hardware is a
   characterization result (plausible nondeterminism source), not proof of
-  tampering. Bit-exact replay is claimed only for the recorded config:
-  HF transformers, CPU, float32, greedy decoding.
+  tampering. Bit-exact replay is claimed only for the recorded config
+  (HF transformers, CPU, float32, greedy decoding).
 - It does **not** cover server-side inference. There is no way to recompute
   a closed API's forward pass. This tool exists for local/open-weight
   inference where replay is possible.
