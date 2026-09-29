@@ -1,3 +1,7 @@
+> **This repository has moved.** Active development continues in [barlowa124/trust-tools](https://github.com/barlowa124/trust-tools) under [`inference_receipts/`](https://github.com/barlowa124/trust-tools/tree/main/inference_receipts). This repo is archived and kept for link stability.
+
+---
+
 # inference-receipts
 
 Hash-bound, replayable receipts for LLM calls. `llmreceipt` runs a
